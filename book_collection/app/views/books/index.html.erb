@@ -1,0 +1,22 @@
+<h1>Books#index</h1>
+<h2><%= render(partial: 'flash') %></h2>
+<h3><%= link_to('Add a Book', new_book_path, class: 'action new') %></h3>
+
+
+<div class="book-container">
+    <table class="book-list">
+        <tr class="table-headers">
+            <th>Title</th>
+        </tr>
+        <% @books.each do |book| %>
+        <tr>
+            <td><%= book.title %></td>
+            <td class="book-buttons">
+                <%= link_to("View", book_path(book), class: 'action show') %>
+                <%= link_to("Edit", edit_book_path(book), class: 'action edit') %>
+                <%= link_to("Delete", delete_book_path(book), class: 'action delete') %>
+            </td>
+        </tr>
+        <% end %>
+    </table>
+</div>

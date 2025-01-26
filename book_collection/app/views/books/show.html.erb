@@ -1,0 +1,18 @@
+<h1>Books#show</h1>
+<h2><%= render(partial: 'flash') %></h2>
+<%= link_to('Back', books_path, class: 'back-button') %>
+
+<div class="show-book">
+    <h2>View book</h2>
+
+    <div class="actions">
+        <%= link_to('Edit', edit_book_path(@book)) %>
+        <%= link_to('Delete', delete_book_path(@book)) %>
+    </div>
+
+    <table>
+        <tr>
+            <th>Title</th>
+            <td><%= @book.title %></td>
+        </tr>
+    </table>

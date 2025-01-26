@@ -1,0 +1,16 @@
+<h1>Books#new</h1>
+
+<%= link_to('Back', books_path, class: 'back-button') %>
+
+<div class="books new">
+    <h2>Create Book</h2>
+
+    <%= form_for(@book) do |f| %>
+        
+        <%= render(partial: 'form', locals: {f: f}) %>
+
+        <div class="form-button">
+            <%= f.submit("Create Book") %>
+        </div>
+    <% end %>
+</div>
