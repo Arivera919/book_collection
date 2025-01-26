@@ -3,4 +3,27 @@
         <th>Title</th>
         <td><%= f.text_field(:title) %></td>
     </tr>
+    <tr>
+        <th>Author</th>
+        <td><%= f.text_field(:author) %></td>
+    </tr>
+    <tr>
+        <th>Price</th>
+        <td><%= f.text_field(:price) %></td>
+    </tr>
+    <tr>
+        <th>Published Date</th>
+        <td>
+        <%= f.select :publisheddate, options_for_select(
+            (1900..2025).map { |year| 
+              (1..12).map { |month| 
+                (1..31).map { |day| 
+                  "#{year}-#{format('%02d', month)}-#{format('%02d', day)}"
+                }
+              }
+            }.flatten,
+            selected: @book.publisheddate || ""
+          ) %>
+        </td>
+    </tr>
 </table>
