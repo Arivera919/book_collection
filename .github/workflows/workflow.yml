@@ -1,5 +1,5 @@
 env:
-  RUBY_VERSION: 3.1.2
+  RUBY_VERSION: 3.3.6
   POSTGRES_USER: postgres
   POSTGRES_PASSWORD: password
   DATABASE_USER: postgres
@@ -29,7 +29,7 @@ jobs:
       - name: Install dependencies
         run: |
           gem install bundler
-          bundler install
+          bundle install
       - name: Create database
         run: |
           bundler exec rails db:create RAILS_ENV=test
